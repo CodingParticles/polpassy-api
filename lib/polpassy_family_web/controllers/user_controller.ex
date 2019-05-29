@@ -45,11 +45,13 @@ defmodule PolpassyFamilyWeb.UserController do
     case PolpassyFamily.Auth.authenticate_user(email, password) do
       {:ok, user} ->
         conn
+        |> put_session(:current_user_id, user.id)
         |> put_status(:ok)
         |> render(PolpassyFamilyWeb.UserView, "sign_in.json", user: user)
 
       {:error, message} ->
         conn
+        |> delete_session(:current_user_id)
         |> put_status(:unauthorized)
         |> render(PolpassyFamilyWeb.ErrorView, "401.json", message: message)
     end
