@@ -6,7 +6,6 @@ defmodule PolpassyFamilyWeb.ErrorView do
   # def render("500.json", _assigns) do
   #   %{errors: %{detail: "Internal Server Error"}}
   # end
-
   # By default, Phoenix returns the status message from
   # the template name. For example, "404.json" becomes
   # "Not Found".
@@ -16,5 +15,13 @@ defmodule PolpassyFamilyWeb.ErrorView do
 
   def render("401.json", %{message: message}) do
     %{errors: %{detail: message}}
+  end
+
+  def render("404.json", _assigs) do
+    %{errors: %{detail: "Endpoint Not Found"}}
+  end
+
+  def render("500.json", _assigns) do
+    %{errors: %{detail: "Internal Server Error"}}
   end
 end
