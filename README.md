@@ -1,4 +1,4 @@
-# PolpassyFamily
+# Polpassy Family
 
 To start your Phoenix server:
 
