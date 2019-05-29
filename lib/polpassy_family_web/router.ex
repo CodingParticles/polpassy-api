@@ -7,5 +7,7 @@ defmodule PolpassyFamilyWeb.Router do
 
   scope "/api", PolpassyFamilyWeb do
     pipe_through :api
+
+    resources "/users", UserController, except: [:new, :edit]
   end
 end
