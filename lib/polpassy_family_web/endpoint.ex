@@ -40,5 +40,9 @@ defmodule PolpassyFamilyWeb.Endpoint do
     key: "_polpassy_family_key",
     signing_salt: "qjBBI7xW"
 
+  plug Corsica,
+    origins: "*",
+    log: [rejected: :error, invalid: :warn, accepted: :debug]
+
   plug PolpassyFamilyWeb.Router
 end
