@@ -9,5 +9,6 @@ defmodule PolpassyFamilyWeb.Router do
     pipe_through :api
 
     resources "/users", UserController, except: [:new, :edit]
+    post "/users/sign-in", UserController, :sign_in
   end
 end
