@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :polpassy_family, PolpassyFamily.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "hot/leo/1244/06",
   database: "polpassy_family_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
@@ -16,3 +16,6 @@ config :polpassy_family, PolpassyFamilyWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# decrease security settings to speed up the testing process
+config :bcrypt_elixir, :log_rounds, 4
